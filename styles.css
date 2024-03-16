@@ -1,0 +1,162 @@
+ @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        * {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        .detel {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .detel h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .detel h1 span {
+            color: #6c63ff;
+        }
+
+        .detel p {
+            font-size: 1.5rem;
+            color: #6c63ff;
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .images .girl {
+            width: 200px;
+            border-radius: 50%;
+            border: 5px solid #6c63ff;
+        }
+
+        form {
+            width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form div {
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        form input[type="text"],
+        form input[type="tel"],
+        form input[type="email"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .star-widget label {
+            font-size: 40px;
+            color: #444;
+            padding: 23px;
+            float: right;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            display: none; /* Hide default radio buttons */
+        }
+
+        input[type="radio"] + label {
+            cursor: pointer;
+        }
+
+        input:checked + label {
+            color: #fd4;
+        }
+
+        input#rate-5:checked + label {
+            color: #fe7;
+            text-shadow: 0 0 20px #952;
+        }
+
+        form header:before {
+            content: "Help us to improve... ";
+        }
+
+        .container form {
+            display: none;
+        }
+
+        input:checked ~ form {
+            display: block;
+        }
+
+        form header {
+            width: 100%;
+            font-size: 25px;
+            color: #fe7;
+            font-weight: 500;
+            margin: 10px 0 25px 0;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        form .textarea {
+            height: 100px;
+            width: 100%;
+            overflow: hidden;
+			
+        }
+
+        form .textarea textarea {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            color: #eee;
+            border: 1px solid #333;
+            background: #222;
+            padding: 10px;
+            font-size: 17px;
+            resize: none;
+        }
+
+        .textarea textarea:focus {
+            border-color: #444;
+        }
+
+        form .btn {
+            height: 45px;
+            width: 100%;
+            margin: 15px 0;
+        }
+
+        form .btn button {
+            height: 100%;
+            width: 100%;
+            border: 1px solid #444;
+            outline: none;
+            background: #222;
+			padding:10px;
+            color: #999;
+            font-size: 17px;
+            font-weight: 500;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        form .btn button:hover {
+            background: #1b1b1b;
+        }

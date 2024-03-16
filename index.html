@@ -1,0 +1,383 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Personal Portfolio</title>
+		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+	* {
+		font-family: 'Poppins', Arial, sans-serif;
+		padding: 20px;
+	}
+		.detel {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		.image {
+			width: 50%; /* Adjust the width as needed */
+			float: right;
+		}
+
+		.detel h1 {
+			font-size: 3rem;
+			margin-bottom: 10px;
+		}
+
+		.detel h1 span {
+			color: #ed7a0e;
+		}
+
+		.detel p {
+			font-size: 1.5rem;
+			color: #ed7a0e;
+		}
+
+		form {
+			width: 500px;
+			margin: 0; /* Remove default margin */
+			background-color: #ffffff00;
+			padding: 30px;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			text-align: right; /* Align form content to the right */
+			float: left; /* Align form to the left */
+		}
+
+
+		form div {
+			margin-bottom: 20px;
+			text-align: center; /* Reset text alignment for form labels */
+		}
+
+		form label {
+			display: block;
+			font-size: 1.2rem;
+			margin-bottom: 5px;
+			text-align: center; /* Align form labels to the center */
+		}
+
+		form input[type="text"],
+		form input[type="tel"],
+		form input[type="email"],
+		form textarea {
+			width: calc(100% - 10px); /* Adjust width to account for padding */
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			padding-right: 10px;
+			box-sizing: border-box; /* Include padding in width calculation */
+		}
+
+		.star-widget label {
+			font-size: 40px;
+			color: #444;
+			padding: 23px;
+			float: right;
+			transition: all 0.2s ease;
+		}
+
+		input:not(:checked) ~ label:hover,
+		input:not(:checked) ~ label:hover ~ label{
+		  color: rgb(0, 23, 115);
+		}
+		input#rate-1:checked ~ label{
+		  color: rgb(50, 23, 115);
+		  text-shadow: 0 0 20px rgb(118, 107, 99);
+		}
+		input#rate-2:checked ~ label{
+		  color: rgb(100, 23, 115);
+		  text-shadow: 0 0 20px rgb(120, 99, 84);
+		}
+		input#rate-3:checked ~ label{
+		  color: rgb(150, 23, 115);
+		  text-shadow: 0 0 20px rgb(143, 99, 65);
+		}
+		input#rate-4:checked ~ label{
+		  color: rgb(200, 23, 115);
+		  text-shadow: 0 0 20px rgb(139, 86, 46);
+		}
+		input#rate-5:checked ~ label{
+		  color: rgb(223, 7, 87);
+		  text-shadow: 0 0 20px #952;
+		}
+		#rate-1:checked ~ form header:before{
+		  content: "Help us to improve... ";
+		}
+		#rate-2:checked ~ form header:before{
+		  content: "Help us to improve...";
+		}
+		#rate-3:checked ~ form header:before{
+		  content: "Help us to improve...";
+		}
+		#rate-4:checked ~ form header:before{
+		  content: "Help us to improve... ";
+		}
+		#rate-5:checked ~ form header:before{
+		  content: "I just love it ";
+		}
+		.container form{
+		  display: none;
+		}
+		input:checked ~ form{
+		  display: block;
+		}
+
+		form header {
+			width: 100%;
+			font-size: 25px;
+			color: #fe7;
+			font-weight: 500;
+			margin: 5px 0 20px 0;
+			text-align: center;
+			transition: all 0.2s ease;
+		}
+
+		form .textarea {
+			height: 100px;
+			width: 100%;
+			overflow: hidden;
+			margin: 0px -20px;
+			
+		}
+
+		form .textarea textarea {
+			height: 100%;
+			width: 100%;
+			outline: none;
+			color: #eee;
+			border: 5px solid #333;
+			background: #222;
+			padding: 10px;
+			font-size: 17px;
+			resize: none;
+		}
+
+		.textarea textarea:focus {
+			border-color: #0f0a0600;
+		}
+
+		form .btn {
+			height: 45px;
+			width: 100%;
+			margin: 0px -20px;
+		}
+
+		.button {
+		display: inline-block;
+		border-radius: 4px;
+		background-color: #000000;
+		border: none;
+		color: #FFFFFF;
+		text-align: center;
+		font-size: 28px;
+		padding: 20px;
+		width: 200px;
+		transition: all 0.5s;
+		cursor: pointer;
+		margin: 5px;
+		}
+
+		.button span {
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+		transition: 0.5s;
+		}
+
+		.button span:after {
+		content: '\00bb';
+		position: absolute;
+		opacity: 0;
+		top: 0;
+		right: -20px;
+		transition: 0.5s;
+		}
+
+		.button:hover span {
+		padding-right: 25px;
+		}
+
+		.button:hover span:after {
+		opacity: 1;
+		right: 0;
+		}
+		
+		.image {
+			width: 50%; /* Adjust width as needed */
+			text-align: center; /* Center the image horizontally */
+		}
+
+		.image img {
+			max-width: 100%; /* Ensure image doesn't exceed its container */
+		}
+
+		#reviews {
+		margin-top: 1000px;
+		}
+
+		#reviews h2 {
+			font-size: 12px;
+			color: #ed7a0e;
+			margin-bottom: 20px;
+		}
+
+		#reviews-list li {
+			margin-bottom: 15px;
+			padding: 10px;
+			border-radius: 5px;
+			box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+		}
+
+		</style>
+	</head>
+	<body>
+			<div class="detel">
+				<h1>Dr.Shagufta Kamal <span>SK</span></h1>
+				<b><p>Doctors Saves Lives  Physical Therapists make them worth living</p></b>
+			</div>
+			
+			<form name="submit-to-google-sheet" onsubmit="event.preventDefault(); submitFeedback();">
+				<div>
+					<label for="clientName">Name:</label>
+					<input type="text" id="clientName" name="clientName" required>
+				</div>
+				<div>
+					<label for="contact">Contact  (Optional):</label>
+					<input type="tel" id="contact" name="contact" >
+				</div>
+				<div>
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" required>
+				</div>
+				<div class="star-widget">
+					<input type="radio" name="star-widget" id="rate-5" value="5">
+					<label for="rate-5" class="fa-solid fa-heart-pulse"></label>
+					<input type="radio" name="star-widget" id="rate-4" value="4">
+					<label for="rate-4" class="fa-solid fa-heart-pulse"></label>
+					<input type="radio" name="star-widget" id="rate-3" value="3">
+					<label for="rate-3" class="fa-solid fa-heart-pulse"></label>
+					<input type="radio" name="star-widget" id="rate-2" value="2">
+					<label for="rate-2" class="fa-solid fa-heart-pulse"></label>
+					<input type="radio" name="star-widget" id="rate-1" value="1">
+					<label for="rate-1" class="fa-solid fa-heart-pulse"></label>
+					<div class="textarea">
+						<textarea cols="30" name="feedback" placeholder="Describe your experience.."></textarea>
+					</div>
+					<div class="btn">
+						<button type="submit" name="submit">Post</button>
+					</div>
+					
+				</div>
+			</form>
+			
+			<div class="image">
+				<!-- Image -->
+				<img src="image_2.jpeg" alt="image_2.jpeg">
+			</div><br><br>
+			<div id="reviews">
+				<h2>Patient reviews</h2>
+				<ul id="reviews-list"></ul>
+			</div>
+		
+
+		<script>
+            // Function to display reviews
+            function displayReviews() {
+			fetch('https://script.google.com/macros/s/AKfycbyrOGyYpKMz9FoHCOEUrCMgGxzify3yaJGk6wK6kfepK4Da2kYOXxzuNb0vikquNP7s/exec')
+				.then(response => response.json())
+				.then(data => {
+					const reviewsList = document.getElementById('reviews-list');
+					reviewsList.innerHTML = '';
+
+					// Start iterating from index 1 to skip the headers row
+					for (let i = 1; i < data.length; i++) {
+						const review = data[i];
+						const listItem = document.createElement('li');
+						// Access properties by their keys, not indices
+						listItem.innerHTML = `<b>${review.clientName}<b> ${generateStars(review.star)}<br> <i>${review.feedback}<i>`;
+						reviewsList.appendChild(listItem);
+					}
+				})
+				.catch(error => console.error('Error:', error));
+		}
+
+		function generateStars(starCount) {
+			let stars = '';
+			for (let i = 0; i < starCount; i++) {
+				stars += '<i class="fas fa-star"></i>';
+			}
+			return stars;
+		}
+			function generateStars(starCount) {
+				let stars = '';
+				for (let i = 0; i < starCount; i++) {
+					stars += '<i class="fas fa-star"></i>';
+				}
+				return stars;
+			}
+
+            // Function to submit feedback
+            function submitFeedback() {
+				const form = document.forms['submit-to-google-sheet'];
+				const formData = new FormData(form);
+				const selectedStar = document.querySelector('input[name="star-widget"]:checked');
+				if (!selectedStar) {
+					alert('Please select a star rating.');
+					return;
+				}
+				formData.append('star', selectedStar.value);
+
+				const contact = formData.get('contact');
+    			if (!contact.trim()) {
+        			formData.delete('contact');
+    				}
+
+				fetch('https://script.google.com/macros/s/AKfycbxYNx2VEIkFYxMrg5D1RxCTBxcnOsPzEJYGPRYGME1uKg3sFrb2AAz9t-6r4of3dcA2/exec', {
+					method: 'POST',
+					body: formData,
+				})
+				.then(response => {
+					if (response.ok) {
+						alert('Feedback submitted successfully!');
+						form.reset();
+						displayReviews(); // Refresh reviews after submitting feedback
+					} else {
+						alert('Error submitting feedback!');
+					}
+				})
+				.catch(error => {
+					console.error('Error:', error);
+				});
+			}
+
+
+            // Function to validate form
+            function validateForm() {
+                var name = document.getElementById("clientName").value;
+                var contact = document.getElementById("contact").value;
+                var namePattern = /^[A-Za-z\s]+$/;
+                var contactPattern = /^[0-9]+$/;
+
+                if (!namePattern.test(name)) {
+                    alert("Name must contain only alphabets");
+                    return false;
+                }
+
+                if (!contactPattern.test(contact)) {
+                    alert("Contact must contain only numbers");
+                    return false;
+                }
+
+                return true;
+            }
+
+            // Call displayReviews function to fetch and display reviews when the page loads
+            displayReviews();
+
+	</script>
+	</body>
+	</html>
